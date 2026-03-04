@@ -520,7 +520,7 @@
         <div class="step-num">4</div>
         <div class="step-body">
           <h4>Complete it — earn seeds</h4>
-          <p>Tap the circle on the left of a task to mark it complete. You earn <span class="mono c-brass">5 seeds</span> per completion. The base rate applies once per task per day — undoing and re-checking does not grant extra seeds.</p>
+          <p>Tap the circle on the left of a task to mark it complete. You earn <span class="mono c-brass">2 seeds</span> per completion. The base rate applies once per task per day — undoing and re-checking does not grant extra seeds.</p>
         </div>
       </div>
       <div class="step">
@@ -555,7 +555,7 @@
       <tbody>
         <tr>
           <td>Complete a task</td>
-          <td><strong>+5</strong></td>
+          <td><strong>+2</strong></td>
           <td>Base rate. Once per task per day.</td>
         </tr>
         <tr>
@@ -566,7 +566,7 @@
         <tr>
           <td>Focus Mode active</td>
           <td><strong>×1.5</strong></td>
-          <td>Multiplies the base (5 → 7 seeds).</td>
+          <td>Adds a flat +1 per task (2 → 3 seeds).</td>
         </tr>
         <tr>
           <td>Spring season</td>
@@ -595,7 +595,7 @@
         </tr>
         <tr>
           <td>Daily cap</td>
-          <td><strong>80 max</strong></td>
+          <td><strong>20 max</strong></td>
           <td>Task completions only. Challenges and streak bonuses are uncapped.</td>
         </tr>
       </tbody>
@@ -692,7 +692,7 @@
   <div class="wrap">
     <p class="section-label">04 — Focus Mode</p>
     <h2>A <em>commitment contract</em></h2>
-    <p class="section-intro">Focus Mode is not a UI dimmer. It is a deliberate constraint: you set a timer, lock out task-adding, and earn 1.5× seeds for every task you complete during the session.</p>
+    <p class="section-intro">Focus Mode is not a UI dimmer. It is a deliberate constraint: you set a timer, lock out task-adding, and earn +1 bonus seed for every task you complete during the session.</p>
 
     <div class="cards">
       <div class="card">
@@ -706,8 +706,8 @@
       <div class="step">
         <div class="step-num">◉</div>
         <div class="step-body">
-          <h4>1.5× seed multiplier</h4>
-          <p>Every task completed during Focus earns <span class="mono c-brass">Math.floor(5 × 1.5) = 7 seeds</span> instead of 5. This stacks with the time-window bonus but not with the streak bonus — the higher of the two applies.</p>
+          <h4>+1 seed bonus per task</h4>
+          <p>Every task completed during Focus earns <span class="mono c-brass">3 seeds</span> instead of 2 — a flat +1 bonus. This stacks with the time-window bonus.</p>
         </div>
       </div>
       <div class="step">
@@ -917,7 +917,7 @@
       <div class="card">
         <div class="card-accent bg-brass"></div>
         <h3>Use Focus Mode for deep work</h3>
-        <p>The 1.5× multiplier is only active during a Focus session. If you have a cluster of deep-work tasks, start a 45–60 min Focus session and work through them — you will earn noticeably more seeds and finish faster.</p>
+        <p>The +1 bonus is active for every task completed during a Focus session. It is modest by design — Focus is about concentrated attention, not rapid seed farming.</p>
       </div>
     </div>
 
@@ -925,7 +925,7 @@
       <div class="card">
         <div class="card-accent" style="background:var(--stone)"></div>
         <h3>Save for Rare plants</h3>
-        <p>Don't spend seeds the moment you earn them. Forest-tier plants (200–280 seeds) feel meaningfully different from common ones. A 3-day save-up is satisfying in a way that instant purchase is not.</p>
+        <p>Don't spend seeds the moment you earn them. Forest-tier plants (200–280 seeds) take weeks of consistent effort. That distance is deliberate — arriving there should feel genuinely earned.</p>
       </div>
       <div class="card">
         <div class="card-accent bg-terra"></div>
@@ -956,12 +956,12 @@
     <p>Complete tasks. Grow plants. Build something beautiful.</p>
     <div class="foot-links">
       <a href="https://ezgiaacar.github.io/bloomday-privacy/">Privacy Policy</a>
-      <a href="mailto:support@bloomday.app">Support</a>
+      <a href="/cdn-cgi/l/email-protection#a7d4d2d7d7c8d5d3e7c5cbc8c8cac3c6de89c6d7d7">Support</a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Intersection observer for section fade-ins
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -984,12 +984,4 @@
         const link = document.querySelector(`.toc-inner a[href="#${id}"]`);
         if (link) {
           link.style.color = 'var(--walnut)';
-          link.style.borderBottomColor = 'var(--walnut)';
-        }
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => io2.observe(s));
-</script>
-</body>
-</html>
+          link.style.borde
