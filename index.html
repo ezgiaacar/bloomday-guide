@@ -431,7 +431,8 @@
     }
 
     /* ── FADE IN ── */
-    .section { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+    .section { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s ease; }
+    .section.animate-in { opacity: 0; transform: translateY(18px); }
     .section.visible { opacity: 1; transform: none; }
 
     /* Colors */
@@ -580,12 +581,12 @@
         </tr>
         <tr>
           <td>Streak bonus (7 days)</td>
-          <td><strong>+5/day</strong></td>
+          <td><strong>+3/day</strong></td>
           <td>Bonus does not count toward daily cap.</td>
         </tr>
         <tr>
           <td>Streak bonus (14 days)</td>
-          <td><strong>+10/day</strong></td>
+          <td><strong>+5/day</strong></td>
           <td>Replaces the 7-day bonus.</td>
         </tr>
         <tr>
@@ -917,7 +918,7 @@
       <div class="card">
         <div class="card-accent bg-brass"></div>
         <h3>Use Focus Mode for deep work</h3>
-        <p>The +1 bonus is active for every task completed during a Focus session. It is modest by design — Focus is about concentrated attention, not rapid seed farming.</p>
+        <p>The +1 bonus applies to every task completed in a Focus session. It's modest by design — Focus is about concentrated attention, not rapid seed farming. Use it for your hardest tasks.</p>
       </div>
     </div>
 
@@ -925,7 +926,7 @@
       <div class="card">
         <div class="card-accent" style="background:var(--stone)"></div>
         <h3>Save for Rare plants</h3>
-        <p>Don't spend seeds the moment you earn them. Forest-tier plants (200–280 seeds) take weeks of consistent effort. That distance is deliberate — arriving there should feel genuinely earned.</p>
+        <p>Don't spend seeds the moment you earn them. Forest-tier plants (200–280 seeds) take several weeks of consistent effort — that distance is intentional. Arriving there should feel genuinely earned.</p>
       </div>
       <div class="card">
         <div class="card-accent bg-terra"></div>
@@ -956,7 +957,7 @@
     <p>Complete tasks. Grow plants. Build something beautiful.</p>
     <div class="foot-links">
       <a href="https://ezgiaacar.github.io/bloomday-privacy/">Privacy Policy</a>
-      <a href="/cdn-cgi/l/email-protection#a7d4d2d7d7c8d5d3e7c5cbc8c8cac3c6de89c6d7d7">Support</a>
+      <a href="/cdn-cgi/l/email-protection#91e2e4e1e1fee3e5d1f3fdfefefcf5f0e8bff0e1e1">Support</a>
     </div>
   </div>
 </footer>
@@ -968,7 +969,10 @@
       if (e.isIntersecting) { e.target.classList.add('visible'); }
     });
   }, { threshold: 0.07 });
-  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+  document.querySelectorAll('.section').forEach(s => {
+    s.classList.add('animate-in');
+    observer.observe(s);
+  });
 
   // Active nav link highlight
   const sections = document.querySelectorAll('.section');
